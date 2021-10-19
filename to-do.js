@@ -91,20 +91,30 @@ function createItem(text){
 }
 
 
+var addedItem = input.value;
+
 //* adding new item
 function addNewItem(e){
-    if (input.value === ''){
+    if (input.value == ''){
         alert('please add a new item.');
             //* eğer buton kısmına text yazıp eklemezsek '' olursa, alert çıkar.
+        
+    }else{
+        alert(`you added ${input.value}`)
+
+        //* create item
+        createItem(input.value);
+        //* save to LS
+        setItemToLS(input.value);
+            //* eğer input'un içi boş değilse item eklenir ve local stroge'de depolanır.
+
     }
-    //* create item
-    createItem(input.value);
 
-    //* save to LS
-    setItemToLS(input.value);
+    
 
-    //* clear input
-    // input.value='';
+    //* clearing input
+    clear.value =''
+    
      //*yazdığımız değer yenilenir ve boşluk olur
 
 e.preventDefault();
